@@ -10,3 +10,9 @@ services:
       - /docker/influxdb2-data:/var/lib/influxdb2
       - /docker/influxdb2-config:/etc/influxdb2
     restart: always
+    environment:
+      - DOCKER_INFLUXDB_INIT_MODE=setup
+      - DOCKER_INFLUXDB_INIT_USERNAME=coc
+      - DOCKER_INFLUXDB_INIT_PASSWORD="TldhTl1!"
+      - DOCKER_INFLUXDB_INIT_ORG=CCS
+      - DOCKER_INFLUXDB_INIT_BUCKET=k8s-metrics
