@@ -1,9 +1,5 @@
-rm -rf /docker/grafana-data*
+rm -rf /data/docker/grafana-data*
 
-mkdir -p /docker/grafana-data
-
-or
-docker volume create influxdb-volume
-docker volume create grafana-volume
+mkdir -p /data/docker/grafana-data
 
 docker-compose -f docker-compose-grafana.yml up -d [--force-recreate]
