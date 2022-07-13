@@ -13,13 +13,13 @@ cd $WORKDIR
 
 for num in 1 2 3; 
 do     
-  rm -rf /docker/kafka$num
-  rm -rf /docker/zk$num
-  mkdir -p /docker/kafka$num-data
-  mkdir -p /docker/zk$num-data
-  mkdir -p /docker/zk$num-txn-logs;
+  rm -rf /data/docker/kafka$num
+  rm -rf /data/docker/zk$num
+  mkdir -p /data/docker/kafka$num-data
+  mkdir -p /data/docker/zk$num-data
+  mkdir -p /data/docker/zk$num-txn-logs;
 done
-chown 1000:1000 -R /docker
+chown 1000:1000 -R /data/docker
 
 
 #########################################################################################

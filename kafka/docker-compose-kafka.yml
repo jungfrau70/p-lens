@@ -13,8 +13,8 @@ services:
       ZOOKEEPER_SERVERS: zoo1:2888:3888;zoo2:2888:3888;zoo3:2888:3888
     restart: always
     volumes:
-      - /docker/zk1-data:/var/lib/zookeeper/data
-      - /docker/zk1-txn-logs:/var/lib/zookeeper/log
+      - /data/docker/zk1-data:/var/lib/zookeeper/data
+      - /data/docker/zk1-txn-logs:/var/lib/zookeeper/log
   zoo2:
     image: confluentinc/cp-zookeeper:7.1.1
     hostname: zoo2
@@ -26,8 +26,8 @@ services:
       ZOOKEEPER_SERVER_ID: 2
       ZOOKEEPER_SERVERS: zoo1:2888:3888;zoo2:2888:3888;zoo3:2888:3888
     volumes:
-      - /docker/zk2-data:/var/lib/zookeeper/data
-      - /docker/zk2-txn-logs:/var/lib/zookeeper/log
+      - /data/docker/zk2-data:/var/lib/zookeeper/data
+      - /data/docker/zk2-txn-logs:/var/lib/zookeeper/log
   zoo3:
     image: confluentinc/cp-zookeeper:7.1.1
     hostname: zoo3
@@ -39,8 +39,8 @@ services:
       ZOOKEEPER_SERVER_ID: 3
       ZOOKEEPER_SERVERS: zoo1:2888:3888;zoo2:2888:3888;zoo3:2888:3888
     volumes:
-      - /docker/zk3-data:/var/lib/zookeeper/data
-      - /docker/zk3-txn-logs:/var/lib/zookeeper/log
+      - /data/docker/zk3-data:/var/lib/zookeeper/data
+      - /data/docker/zk3-txn-logs:/var/lib/zookeeper/log
 
   kafka1:
     image: confluentinc/cp-kafka:7.1.1
@@ -64,7 +64,7 @@ services:
       - zoo3
     restart: always
     volumes:
-      - /docker/kafka1-data:/var/lib/kafka/data
+      - /data/docker/kafka1-data:/var/lib/kafka/data
   kafka2:
     image: confluentinc/cp-kafka:7.1.1
     hostname: kafka2
@@ -87,7 +87,7 @@ services:
       - zoo3
     restart: always
     volumes:
-      - /docker/kafka2-data:/var/lib/kafka/data
+      - /data/docker/kafka2-data:/var/lib/kafka/data
   kafka3:
     image: confluentinc/cp-kafka:7.1.1
     hostname: kafka3
@@ -110,7 +110,7 @@ services:
       - zoo3
     restart: always
     volumes:
-      - /docker/kafka3-data:/var/lib/kafka/data
+      - /data/docker/kafka3-data:/var/lib/kafka/data
 
   kafka-schema-registry:
     image: confluentinc/cp-schema-registry:7.1.1
